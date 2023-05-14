@@ -11,7 +11,7 @@ import Button from './Button/Button';
 export default class App extends Component {
   state = {
     URL: 'https://pixabay.com/api/',
-    API_KEY: '34966777-a1579da70d4a26e0e4c8e2fcd',
+    API_KEY: '25766392-01b12b6ed5ab34bc2910d9c3e',
     pictures: [],
     error: '',
     status: 'idle',
