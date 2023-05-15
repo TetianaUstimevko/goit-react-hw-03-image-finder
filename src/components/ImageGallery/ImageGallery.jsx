@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import s from './ImageGallery.module.css';
-import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
+import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
 import Modal from 'components/Modal/Modal';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
@@ -15,18 +15,12 @@ export default class ImageGallery extends Component {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
   };
 
-  handleImageClick = (e) => {
-    if (e.target.nodeName !== 'IMG') {
-      this.setState({ showModal: false });
-      return;
-    } else {
-      let picture = this.props.images.filter((obj) => {
-        return obj.id === parseInt(e.target.alt);
-      });
-      this.setState({ bigPic: picture[0].largeImageURL });
+  handleImageClick = (largeImageURL) => {
+    
+      this.setState({ bigPic: largeImageURL });
       this.toggleModal();
-    }
-  };
+    
+  }
 
   render() {
     const { showModal, bigPic } = this.state;
@@ -38,7 +32,9 @@ export default class ImageGallery extends Component {
               <ImageGalleryItem
                 key={nanoid()}
                 smallImgURL={img.webformatURL}
+                largeImageURL={img.largeImageURL}
                 id={img.id}
+                handleImageClick = {this.handleImageClick}
               />
             );
           })}
