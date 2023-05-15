@@ -6,7 +6,7 @@ export const ImageGalleryItem = ({handleImageClick, largeImageURL}) => {
 
     return (
       <li className={s.galleryItem}>
-        <img onClic = {() => handleImageClick(largeImageURL)} src={this.props.smallImgURL} alt={this.props.id} />
+        <img onClick={()=> handleImageClick(largeImageURL)} src={this.props.smallImgURL} alt={this.props.id} />
       </li>
     );
   }
