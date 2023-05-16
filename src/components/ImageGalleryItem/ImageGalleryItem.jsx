@@ -11,7 +11,6 @@ export const ImageGalleryItem = ({handleImageClick, largeImageURL, smallImgURL, 
     );
   }
 
-
 ImageGalleryItem.propTypes = {
   id: PropTypes.number.isRequired,
   smallImgURL: PropTypes.string.isRequired,

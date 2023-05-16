@@ -26,7 +26,7 @@ export default class ImageGallery extends Component {
     const { showModal, bigPic } = this.state;
     return (
       <>
-        <ul className={s.gallery} onClick={this.handleImageClick}>
+        <ul className={s.gallery} >
           {this.props.images.map((img) => {
             return (
               <ImageGalleryItem
